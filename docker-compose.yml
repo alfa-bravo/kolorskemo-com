@@ -5,7 +5,6 @@ services:
         image: nginx:mainline-alpine
         volumes:
             - ./html:/var/www/html
-            - ./auth:/var/www/auth:ro
             - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
             - ./nginx/conf.d:/etc/nginx/conf.d:ro
             - ./nginx/include:/etc/nginx/include:ro
