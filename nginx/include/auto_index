@@ -1,0 +1,39 @@
+autoindex on;
+#fancyindex on; #qq
+if (-d $request_filename) {
+    set $req D;
+}
+
+# This is horrible but I don't know of any better way to do it...
+
+###### INDEX ######
+set $dir "N";
+if (-f $request_filename/../../../../../../../.index) { set $dir "D"; }
+if (-f $request_filename/../../../../../../../.no-index) { set $dir "N"; }
+if (-f $request_filename/../../../../../../.index) { set $dir "D"; }
+if (-f $request_filename/../../../../../../.no-index) { set $dir "N"; }
+if (-f $request_filename/../../../../../.index) { set $dir "D"; }
+if (-f $request_filename/../../../../../.no-index) { set $dir "N"; }
+if (-f $request_filename/../../../../.index) { set $dir "D"; }
+if (-f $request_filename/../../../../.no-index) { set $dir "N"; }
+if (-f $request_filename/../../../.index) { set $dir "D"; }
+if (-f $request_filename/../../../.no-index) { set $dir "N"; }
+if (-f $request_filename/../../.index) { set $dir "D"; }
+if (-f $request_filename/../../.no-index) { set $dir "N"; }
+if (-f $request_filename/../.index) { set $dir "D"; }
+if (-f $request_filename/../.no-index) { set $dir "N"; }
+if (-f $request_filename/.index) { set $dir "D"; }
+if (-f $request_filename/.no-index) { set $dir "N"; }
+######################
+
+if (-f $request_filename/index.html) {
+    set $req OK;
+}
+
+set $req "${req}${dir}";
+
+if ($req = DN) {
+    # Don't use 403 here
+    # It makes Firefox throw a wobbly
+    return 404;
+}

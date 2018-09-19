@@ -1,0 +1,20 @@
+version: '3'
+
+services:
+    certbot:
+        image: certbot/certbot
+        volumes:
+            - ./letsencrypt:/etc/letsencrypt
+            - ./html-edge:/var/www/html
+        environment:
+            - domains=${CERTBOT_DOMAINS}
+            - email=${CERTBOT_EMAIL}
+        command: "certonly \
+                --verbose \
+                --noninteractive \
+                --webroot \
+                --agree-tos \
+                --webroot-path /var/www/html \
+                --email ${CERTBOT_EMAIL} \
+                --expand \
+                --domains ${CERTBOT_DOMAINS}"
