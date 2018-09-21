@@ -13,17 +13,34 @@ h1
     color: #D22;
     font-family: 'Titillium Web', sans-serif;
     font-weight: 400;
-    text-shadow: 0 0 0.1em rgba(0,0,0,0.5), 0 0 0.3em rgba(0,0,0,0.5), 0 0 0.6em rgba(0,0,0,0.5);
 }
 
-h1.big
+h1.brand
 {
+    display:inline;
     font-size-adjust: 2;
+    position: relative;
+    background: rgba(255,116,92,1);
+    background: -moz-linear-gradient(-45deg, rgba(255,116,92,1) 10%, rgba(255,214,102,1) 40%, rgba(96,232,196,1) 60%, rgba(86,84,217,1) 90%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+/* https://www.viget.com/articles/background-clip-text-shadow-gradients/ */
+h1.brand:after
+{
+    background: none;
+    content: attr(data-text);
+    left: 0;
+    top: 0;
+    position: absolute;
+    text-shadow: 0 0 0.1em rgba(0,0,0,0.5), 0 0 0.3em rgba(0,0,0,0.5), 0 0 0.6em rgba(0,0,0,0.5);
+    z-index: -1;
 }
 
 h3
 {
-    text-shadow: 0 0.5px 0.2em rgba(0,0,0,0.5);
+    text-shadow:  0 0 0.1em rgba(0,0,0,1), 0 0.5px 0.5em rgba(0,0,0,0.8);
 }
 
 .front-and-center
