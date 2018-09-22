@@ -4,6 +4,7 @@ body
     background-image: url('../img/gelato-bg-web.jpg');
     background-position: 50% 8%;
     background-repeat: no-repeat;
+    background-size: calc(1000px + 100vw) auto;
     color: #FFF;
     font-family: 'Open Sans', sans-serif;
 }
@@ -18,7 +19,7 @@ h1
 h1.brand
 {
     display:inline;
-    font-size-adjust: 2;
+    font-size: calc(24pt + 8vw);
     position: relative;
     background: rgba(255,116,92,1);
     background: -moz-linear-gradient(-45deg, rgba(255,116,92,1) 10%, rgba(255,214,102,1) 40%, rgba(96,232,196,1) 60%, rgba(86,84,217,1) 90%);
