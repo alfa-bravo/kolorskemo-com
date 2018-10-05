@@ -24,4 +24,4 @@ services:
             - "80:80"
         restart: unless-stopped
     kolorskemo-dev:
-        build: https://github.com/alfa-bravo/kolorskemo-vue-setup.git
+        image: kolorskemo:master
