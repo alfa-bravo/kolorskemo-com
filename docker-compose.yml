@@ -23,5 +23,5 @@ services:
         ports:
             - "80:80"
         restart: unless-stopped
-    kolorskemo-dev:
+    kolorskemo-staging:
         image: kolorskemo:master
