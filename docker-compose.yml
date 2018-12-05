@@ -24,8 +24,8 @@ services:
             - "80:80"
         restart: unless-stopped
     kolorskemo-client-staging:
-        image: kolorskemo-client:master
+        image: kolorskemo-client:staging
         volumes:
             - ./html/staging.kolorskemo.com:/app/client/build-out
     kolorskemo-server-staging:
-        image: kolorskemo-server:master
+        image: kolorskemo-server:staging
