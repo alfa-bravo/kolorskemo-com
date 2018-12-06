@@ -30,8 +30,8 @@ services:
     kolorskemo-server-staging:
         image: kolorskemo-server:staging
     kolorskemo-client-production:
-        image: kolorskemo-client:production
+        image: kolorskemo-client:production-latest
         volumes:
             - ./html/kolorskemo.com:/app/client/build-out
     kolorskemo-server-production:
-        image: kolorskemo-server:production
+        image: kolorskemo-server:production-latest
