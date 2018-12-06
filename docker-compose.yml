@@ -29,3 +29,9 @@ services:
             - ./html/staging.kolorskemo.com:/app/client/build-out
     kolorskemo-server-staging:
         image: kolorskemo-server:staging
+    kolorskemo-client-production:
+        image: kolorskemo-client:production
+        volumes:
+            - ./html/kolorskemo.com:/app/client/build-out
+    kolorskemo-server-production:
+        image: kolorskemo-server:production
